@@ -1,0 +1,15 @@
+-----------------------project:- DAY1 /03/08/2018------------------------
+
+1- convert index.html to index.php
+2- start session and connect data base
+3- start cutting
+	header:- start to header-end
+	slider:- whole slider
+	footer:- footer start to page-end
+	sidebar:- class left_sidebar full
+4- create a sql table brands,categories
+5- edit sibebar.php-> brands,categories
+	brands -> ul -> li changes to select query
+	categories -> ul -> li changes to select query
+
+	
