@@ -16,7 +16,7 @@
 
 							<div class="panel panel-default">
 									<div class="panel-heading">
-										<h4 class="panel-title"><a href="#">
+										<h4 class="panel-title"><a href="category-wise-product.php?catid=<?php echo $ans['ca_id']?> ">
 											<?php  
 												echo($ans['ca_name']);
 											?>
