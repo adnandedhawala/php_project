@@ -119,11 +119,11 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Home</a></li>
+								<li><a href="index.php" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">User panel<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="add_category.php">Add Category</a></li>
-										<li><a href="product-details.html">Add Brand</a></li> 
+										<li><a href="add_brand.php">Add Brand</a></li> 
 										<li><a href="checkout.html">Add Product</a></li> 
 										<li><a href="cart.html">Change Password</a></li> 
 										<li><a href="login.html">Logout</a></li> 

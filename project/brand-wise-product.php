@@ -13,24 +13,19 @@
 				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Categorywise Items</h2>
+						<h2 class="title text-center">Brandwise Items</h2>
 
 <?php
-		// print_r($_GET);
-		$categoryid=$_REQUEST['catid'];
+	$branditem=$_GET['brid'];
+	// echo($branditem);
+	$str_brand="select br_name from brands where br_id= '$branditem' ";
+	$result=mysqli_query($conn,$str_brand) or die(mysqli_error($conn));
+	$result_brand= mysqli_fetch_assoc($result);
+	// var_dump($result_brand);
+	echo "<h2>".$result_brand['br_name']."</h2>";
 
-		$str_catname="select ca_name from categories where ca_id = '$categoryid'";
-		// echo $str_catname;
 
-		$res_catname=mysqli_query($conn,$str_catname) or die(mysqli_error($conn));
-
-		$ans_catname= mysqli_fetch_assoc($res_catname);
-
-		echo "<h2>".$ans_catname['ca_name']."</h2>";
-
-		
-
-	$str = "select pro_id,pro_name,pro_price,pro_discount,pro_description,pro_path,br_name,ca_name  from brands,categories,products where br_id=pro_brid and ca_id=pro_caid and pro_caid='$categoryid' order by pro_id desc";
+	$str = "select pro_id,pro_name,pro_price,pro_discount,pro_description,pro_path,br_name,ca_name  from brands,categories,products where br_id=pro_brid and ca_id=pro_caid and pro_brid= $branditem order by pro_id desc";
 
 	$res = mysqli_query($conn,$str) or die(mysqli_error($conn));
 	// print_r($res);
@@ -45,7 +40,7 @@
 			<div class="single-products">
 					<div class="productinfo text-center">
 						<img src="<?php echo $ans['pro_path'];?>" alt="" />
-						<h2><?php echo round($ans['pro_price']);?></h2>
+						<h2><?php echo round($ans['pro_price']);?></h2><!-- round function converts floating point t nearest integer-->
 						<p><?php echo $ans['pro_name'];?></p>
 						<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 					</div>
@@ -73,7 +68,6 @@
 					</div><!--features_items-->
 					
 					
-					
 				</div>
 			</div>
 		</div>
@@ -81,4 +75,3 @@
 <?php
 	require_once 'footer.php';
 ?>	
-	

@@ -10,6 +10,54 @@
 4- create a sql table brands,categories
 5- edit sibebar.php-> brands,categories
 	brands -> ul -> li changes to select query
+		delete extra li elements.
+
+
 	categories -> ul -> li changes to select query
 
-	
+-----------------------project:- DAY2------------------------
+* add products table in data base
+* added pruducts folder whch contains product images
+* edit index.php
+	under feature items deleted all col-mds of feature product and run a loop firing select query
+*then edit the shop button in nav bar to user panel
+	then add following li:-
+		add_category
+		add_brand
+		add_product
+		change password 
+		logout
+*make an add_category page
+	->take login form edit it
+	->form action is category_action.php
+	-> create category_action.php
+		.include db_connect
+		.run insert query
+*make an add_brand page
+	->take login form edit it
+	->form action is brand_action.php
+	-> create brand_action.php
+		.include db_connect
+		.run insert query
+
+
+-----------------------project:- DAY3------------------------
+*Edit category section of sidebar
+	->add href of category_wise_item.php and pass cat_id using get method
+	->create category_wise_item.php
+		.copy index.php
+		.edit the layout
+		.run select query to get category name
+		.add a h2 tag and append category name(whatever may be the variable name)
+		.edit the select query in index.php(product wala ) to set pro_catid to category  id(whatever the variable may be)
+*Do the same for brand section of sidebar
+
+*add href of login button from login.html to login.php
+	->edit the layout (keep only form section) of new user signup section
+	->add the required fields
+	->set form action to register_action.php
+	->create a users table in database
+	->create register_action.php
+		.do basic validation
+		.take username, password,email and contact number to store in data base(fire insert query)
+

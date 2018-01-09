@@ -32,7 +32,7 @@
 			<div class="single-products">
 					<div class="productinfo text-center">
 						<img src="<?php echo $ans['pro_path'];?>" alt="" />
-						<h2><?php echo round($ans['pro_price']);?></h2>
+						<h2><?php echo "₹ ".round($ans['pro_price']);?></h2><!-- round function converts floating point to nearest integer-->
 						<p><?php echo $ans['pro_name'];?></p>
 						<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 					</div>
@@ -451,4 +451,3 @@
 <?php
 	require_once 'footer.php';
 ?>	
-	
