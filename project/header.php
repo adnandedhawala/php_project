@@ -1,8 +1,5 @@
 <?php 
-	if(session_id()=="")session_start();
-
-	$conn= mysqli_connect("localhost","root","","day6");
-	// print_r($conn);
+	require_once 'db_connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -97,7 +94,21 @@
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
+<?php 
+	if(!isset($_SESSION['log_name'])):
+?>
+<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
+<?php 
+	endif;
+?>
+<?php 
+	if(isset($_SESSION['log_name'])):
+?>
+<li><a href="logout.php"><i class="fa fa-lock"></i> Logout(<?php echo($_SESSION['log_name']) ?>)</a></li>
+<?php 
+	endif;
+?>
+
 							</ul>
 						</div>
 					</div>

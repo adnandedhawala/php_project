@@ -1,4 +1,8 @@
 <?php 
+	session_start();
+	if(isset($_SESSION['log_name'])){
+		header("location:index.php");
+	}
 	require_once 'header.php';
  ?>
 
@@ -9,13 +13,10 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#">
-							<input type="text" placeholder="Name" />
-							<input type="email" placeholder="Email Address" />
-							<span>
-								<input type="checkbox" class="checkbox"> 
-								Keep me signed in
-							</span>
+						<form action="login_action.php" method="POST">
+							<input type="text" placeholder="Email Address" name="log_email" />
+							<input type="password" placeholder="Enter Password" name="log_password" />
+							
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>
 					</div><!--/login form-->
