@@ -1,4 +1,17 @@
 <?php 
+	
+	session_start();
+	if(!isset($_SESSION['log_name'])){
+		header("location:logout.php");
+	}
+	else{
+		if($_SESSION['log_status']!=0){
+			header("location:index.php");
+		}
+	}
+
+
+
 	require_once 'header.php';
 ?>
 <div class="container">

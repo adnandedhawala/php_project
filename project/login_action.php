@@ -1,42 +1,59 @@
-<?php  
-	require_once 'db_connect.php';
+<?php
+require_once 'db_connect.php';
+ // print_r($_POST);
 
-	if (empty($_POST['log_email'])) $msg = "pls enter valid email";
-	else if (empty($_POST['log_password'])) $msg = "pls enter valid password";
+if(empty($_POST['log_email'])){
 
-	else{
-		$email=$_POST['log_email'];
-		$password = sha1($_POST['log_password']);
-		// echo($email);
-		// echo($password);
+	$msg="please enter Email";
+}
+else if (empty($_POST['log_password'])){
 
-		$str ="select * from users where log_email='$email'";
+	$msg="please enter password";
+}
+else{
 
-		$result= mysqli_query($conn,$str) or die(mysqli_error($conn));
-		// print_r($result);
-		if($result->num_rows>0){
-			$rec = mysqli_fetch_assoc($result);
+	$email=$_POST['log_email'];
+	$txt_password=sha1($_POST['log_password']);
+	// echo $email;
+	// echo $txt_password;
 
-			if($password != $rec['log_password']){
-				$msg= "password does'nt match";
-			}
-			else{
-				$msg="ok";
-				$_SESSION['log_id']=$rec['log_id'];
-				$_SESSION['log_name']=$rec['log_name'];
-				$_SESSION['log_email']=$rec['log_email'];
-				$_SESSION['log_mobile']=$rec['log_mobile'];
+	$str="select * from users where log_email='$email'";
+	// echo $str;
+	$res=mysqli_query($conn,$str) or die (mysqli_error($conn));
 
-			}
+	// print_r($res);
+
+	if($res->num_rows>0){
+		$db_record=mysqli_fetch_assoc($res);
+		// echo "<pre>";
+		// print_r($db_record);
+		// echo "</pre>";
+
+		if($txt_password!=$db_record['log_password']){
+			$msg="password for given emailid does not match";
 		}
 		else{
-			$msg="emailid doesnot exist";
+			$_SESSION['log_id']=$db_record['log_id'];
+			$_SESSION['log_name']=$db_record['log_name'];
+			$_SESSION['log_mobile']=$db_record['log_mobile'];
+			$_SESSION['log_email']=$db_record['log_email'];
+			$_SESSION['log_status']=$db_record['log_status'];
+
+			$msg="ok";
 		}
 	}
-	if ($msg="ok"){
-		header("location:index.php");
-	}
 	else{
-		echo $msg;
+		$msg="emailid does not exist";
 	}
+
+}
+if($msg=="ok"){
+	// print_r($_SESSION);
+	header("location:index.php");
+}
+else{
+	echo $msg;
+}
+
+
 ?>

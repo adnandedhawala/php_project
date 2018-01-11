@@ -21,3 +21,5 @@ create table users(
 	log_password varchar(100),
 	log_time timestamp
 );
+
+alter table users add column log_status int default 1 after log_password;

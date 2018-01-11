@@ -12,12 +12,29 @@
 		$email=$_POST['log_email'];
 		$password=sha1($_POST['log_password']);
 
-		$str="insert into users(log_name,log_mobile,log_email,log_password) values ('$name','$mobile','$email','$password')";
+		$str_chk="select count(*) as cnt from users where log_email = '$email'";
+		// echo($str_chk);
 
-		$result= mysqli_query($conn,$str) or die(mysqli_error($conn));
-		if($result){
-			$msg="user Added";
+		$res_cnt= mysqli_query($conn,$str_chk) or die(mysqli_error($conn));
+		// print_r($res_cnt);
+		$final_cnt=mysqli_fetch_assoc($res_cnt);
+		// print_r($final_cnt);
+
+		if($final_cnt['cnt']>0){
+			$msg = "user exist";
 		}
+
+		else{
+
+
+			$str="insert into users(log_name,log_mobile,log_email,log_password) values ('$name','$mobile','$email','$password')";
+
+			$result= mysqli_query($conn,$str) or die(mysqli_error($conn));
+			if($result){
+				$msg="user Added";
+			}			
+		}
+
 
 	}
 	echo $msg;

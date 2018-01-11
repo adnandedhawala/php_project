@@ -3,5 +3,5 @@
 		session_start();
 		// echo(session_id());
 	}
-	$conn = mysqli_connect("localhost","root","","day6");
+	$conn = mysqli_connect("localhost","root","","adnan");
 ?>
