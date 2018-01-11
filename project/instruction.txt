@@ -61,3 +61,40 @@
 		.do basic validation
 		.take username, password,email and contact number to store in data base(fire insert query)
 
+-----------------------project:- DAY4 and DAY5------------------------
+
+*edit register_action.php (to make sure that input areas are not blank , to check wheter user has already signed up or not)
+	->run a query to select count(*) for email(taking email from $email and checking from database)
+*edit login.php
+	->check whether isset($_SESSION['log_name'])(can be any session variable) if set then redirect to index.php
+*create login_action.php
+	->check for email and password
+	->if not empty then store email and password in variable
+	->from users select all variables where log_email= email
+	->if object retuns num_rows > 0 then fetch array 
+	->compare password 
+	-> if password doesnt match then show error-msg else store session variables and redirect to index.php
+*edit header.php
+	->edit login li
+		.if session is not set then show login
+		.else if session is set then show logout(log_name)
+		.link logout.php
+	->create logout.php
+		.start session
+		.regenerate id
+		.unset session variables
+		.destroy session 
+		.redirect to index.php
+	->edit user panel li 
+		.set log_status to 1 by default and set admin log_status to 0
+		.if session is set and log_status is 0 then show user panel
+*edit add_category
+	->if session is not set then then redirect to logut.php(which will redirect to index.php)
+	->else check log_status 
+		.if log_status is not 0 then redirect to index.php
+*edit add_brand
+	-> do same as add_category
+	
+
+
+
