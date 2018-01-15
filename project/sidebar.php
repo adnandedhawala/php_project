@@ -10,7 +10,7 @@
 								if($res->num_rows>0):
 									while ($ans=$res->fetch_array(MYSQLI_ASSOC)) :
 							?>
-
+						
 
 							
 

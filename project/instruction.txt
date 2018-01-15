@@ -74,6 +74,7 @@
 	->if object retuns num_rows > 0 then fetch array 
 	->compare password 
 	-> if password doesnt match then show error-msg else store session variables and redirect to index.php
+	->add sms code before user added
 *edit header.php
 	->edit login li
 		.if session is not set then show login
