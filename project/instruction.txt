@@ -96,6 +96,22 @@
 *edit add_brand
 	-> do same as add_category
 	
+-----------------------project:- DAY6------------------------
+
+*edit header ->user panel to show change password and logout to users and and rest to admin
+*create password.php
+	->create a form for change password
+	->create password_action.php
+		.do basic validations
+		.run to query to fetch password for the user using log_id stored in $_session
+		.if password matches run a query to update password in database
+
+-----------------------project:- DAY7------------------------
+
+*edit header.php
+	-> create a link in user panel->add_product for add_product.php
+*create add_product.php
+*create product_action.php
 
 
 

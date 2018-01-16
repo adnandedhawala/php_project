@@ -164,8 +164,8 @@ endif;
                                     	if(isset($_SESSION['log_status']) && $_SESSION['log_status']==0):
                                     ?>
                                         <li><a href="add_category.php">Add category</a></li>
-										<li><a href="product-details.html">Add Brand</a></li> 
-										<li><a href="checkout.html">add product</a></li> 
+										<li><a href="add_brand.php">Add Brand</a></li> 
+										<li><a href="add_product.php">Add Product</a></li> 
 									<?php  
 										endif;
 									?>
