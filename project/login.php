@@ -37,7 +37,7 @@
 						</form>
 					</div><!--/sign up form-->
 				</div>
-			</div>
+			</div>	
 		</div>
 	</section><!--/form-->
 

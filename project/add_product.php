@@ -14,7 +14,7 @@
 <div class="container" style="margin-bottom: 20px">
 	<div class="login-form"><!--login form-->
 		<h2>Add Product</h2>
-		<form action="product_action.php" method="post">
+		<form action="product_action.php" method="post" enctype="multipart/form-data">
 			<select name="pro_caid">
 				<option value="">Please Select Category</option>
 				<?php  
