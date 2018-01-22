@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".btn").click(function(){
+				
+				// $.get("getdata.php",function(xyz){
+				// 	$("#para").html(xyz); 
+				// })
+				// comments:-
+				// $.get() is a function to get data from a file/url
+				// 	$.get((filepath/Url),a function to be performed)
+				//  it is used to get data
+
+				$.ajax({
+					type:"get",
+					url:"getdata.php",
+					success:function(xyz){
+						$("#para").html(xyz)
+					},
+					error:function(response){
+						console.log(response)
+					}
+				})
+			})
+
+			$(".btn1").click(function(){
+			// 	$.post("getdata1.php","x=10&y=987",function(xyz){
+			// 		$("#para1").html(xyz); 
+			// 	})
+
+				// commnets:-
+				// $.post() is a function to send and get data from a file/url
+				// 	$.post((filepath/Url),"data to be send",a function to be performed)
+				//  it is used to get and send data
+
+				$.ajax({
+					type:"post",
+					url:"getdata1.php",
+					data:"x=10&y=7895",
+					success:function(xyz){
+						$("#para1").html(xyz)
+					},
+					error:function(response){
+						console.log(response)
+					}
+				})
+			})
+		});
+	</script>
+</head>
+<body>
+	<button class="btn">Enter</button>
+	<p id="para" >theme</p>
+
+	<hr>	
+	<button class="btn1">Enter</button>
+	<p id="para1" >action</p>
+
+</body>
+</html>
