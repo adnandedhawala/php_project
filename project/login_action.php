@@ -47,13 +47,7 @@ else{
 	}
 
 }
-if($msg=="ok"){
-	// print_r($_SESSION);
-	header("location:index.php");
-}
-else{
-	echo $msg;
-}
+echo $msg;
 
 
 ?>

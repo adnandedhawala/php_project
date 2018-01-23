@@ -164,6 +164,7 @@
 	<script src="js/price-range.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/eshopper.js"></script>
 </body>
 </html>
 

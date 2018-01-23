@@ -13,13 +13,14 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="password_action.php" method="POST">
+						<form id="password_form">
 							<input type="password" placeholder="Enter Current Password" name="cpass" /> <!-- current password -->
 							<input type="password" placeholder="Enter new Password" name="npass" /> <!-- new password -->
 							<input type="password" placeholder="Confirm new Password" name="cnpass" /> <!-- confirm new password -->
 
-							<button type="submit" class="btn btn-default">Update</button>
+							<button type="button" class="btn btn-default btn_password">Update</button>
 						</form>
+						
 					</div><!--/login form-->
 				</div>
 				
