@@ -54,4 +54,28 @@ $(function(){
 			},
 		})
 	})
-})
+
+	$(".filter_brand").click(function(aobj){
+		aobj.preventDefault();
+		// alert(1)
+		rec=$(this).attr("for");
+		// console.log(rec)
+
+		$.post("brand_filter-wise-product.php","xyz="+rec,function(response){
+			$(".padding-right").html(response);
+		})
+	})
+
+	$(".add-in-cart").click(function(aobj){
+		aobj.preventDefault();
+		// alert(1)
+		rec= $(this).attr("for");
+		// alert (rec);
+
+		$.post("cart_action.php","xyz="+rec,function(response){
+			// console.log(response);
+			alert(response);
+		})
+
+	})
+});

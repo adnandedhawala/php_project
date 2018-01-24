@@ -1,31 +1,17 @@
-<?php
-	require_once 'header.php';
-?>
-	
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-3">
-					<?php
-					require_once 'sidebar.php';
-					?>
-				</div>
-				
-				<div class="col-sm-9 padding-right">
-					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Brandwise Items</h2>
 
-<?php
-	$branditem=$_GET['brid'];
-	// echo($branditem);
+<?php 
+	require_once 'db_connect.php';
+
+	$branditem=$_POST['xyz'];
+	// echo $branditem;
+	// exit;
+
 	$str_brand="select br_name from brands where br_id= '$branditem' ";
 	$result=mysqli_query($conn,$str_brand) or die(mysqli_error($conn));
 	$result_brand= mysqli_fetch_assoc($result);
 	// var_dump($result_brand);
 
-
-	
-	echo "<h2>".$result_brand['br_name']."</h2>";
+echo "<h2>".$result_brand['br_name']."</h2>";
 
 
 	$str = "select pro_id,pro_name,pro_price,pro_discount,pro_description,pro_path,br_name,ca_name  from brands,categories,products where br_id=pro_brid and ca_id=pro_caid and pro_brid= $branditem order by pro_id desc";
@@ -66,15 +52,4 @@
 <?php
 	endwhile;
 	endif;
-?>						
-						
-					</div><!--features_items-->
-					
-					
-				</div>
-			</div>
-		</div>
-	</section>
-<?php
-	require_once 'footer.php';
 ?>	

@@ -42,10 +42,11 @@
 										if($res->num_rows>0):
 											while ($ans=$res->fetch_array(MYSQLI_ASSOC)) :
 									?>
-										<li><a href="brand-wise-product.php?brid=<?php echo $ans['br_id']?>"> <span class="pull-right">(50)</span>
+										<li><a href="#" class="filter_brand" for="<?php echo $ans['br_id']; ?>"> <span class="pull-right">(50)</span>
 												<?php 
 													// print_r($ans);
 													echo $ans['br_name'];
+
 												?>
 											</a>
 										</li>
