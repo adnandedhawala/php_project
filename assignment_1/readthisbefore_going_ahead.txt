@@ -1,0 +1,3 @@
+limit accessibility;
+
+complete send_sms.php ajax part;

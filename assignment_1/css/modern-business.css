@@ -1,0 +1,85 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+.banner,.sms{
+  border: 1% 0;
+  border-color: #ccc;
+  margin: 2% 0%;
+  padding: 2% 0%;
+}
+.list{
+  list-style: none;
+  padding: 2% 0;
+  font-size: 1.25rem;
+}
+.list li a,.list li{
+  color: #333;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-bottom: 1%;
+  padding-top: 1%;
+}
+.orange{
+  margin-top: 50px;
+}
+.orange li,.orange li a{
+  display: inline-block;
+}
+.liblist{
+  list-style: none;
+  padding: 2% 0;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: lighter;
+}
+.liblist li a,.liblist li{
+  color: #333;
+  /*margin-top: 1%;
+  margin-bottom: 1%;
+  padding-bottom: 1%;
+  padding-top: 1%;*/
+}
+.lib ul{
+  padding: 0;
+  margin: 0;
+}
+.sms_list{
+  list-style: none;
+  padding: 1% 0;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+.sms_list li a,.sms_list li{
+  color: #333;
+  /*margin-top: 1%;
+  margin-bottom: 1%;
+  padding-bottom: 1%;
+  padding-top: 1%;*/
+}
