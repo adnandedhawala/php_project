@@ -37,7 +37,7 @@ echo "<h2>".$result_brand['br_name']."</h2>";
 						<div class="overlay-content">
 							<h2><?php echo round($ans['pro_price']);?></h2>
 							<p><?php echo $ans['pro_name'];?></p>
-							<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+							<a href="#" for="<?php echo $ans['pro_id'] ?>" class="btn btn-default add-to-cart add-in-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 						</div>
 					</div>
 			</div>

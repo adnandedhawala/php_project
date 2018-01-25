@@ -29,13 +29,13 @@
 						<img src="<?php echo $ans['pro_path'];?>" alt="" />
 						<h2><?php echo "₹ ".round($ans['pro_price']);?></h2><!-- round function converts floating point to nearest integer-->
 						<p><?php echo $ans['pro_name'];?></p>
-						<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+						<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Delete from cart</a>
 					</div>
 					<div class="product-overlay">
 						<div class="overlay-content">
 							<h2><?php echo "₹ ".round($ans['pro_price']);?></h2>
 							<p><?php echo $ans['pro_name'];?></p>
-							<a href="#" for="<?php echo($ans['pro_id']) ?>" class="btn btn-default add-to-cart add-in-cart"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
+							<a href="#" for="<?php echo($ans['pro_id']) ?>" class="btn btn-default add-to-cart delete-from-cart"><i class="fa fa-shopping-cart"></i>Delete from Cart</a>
 						</div>
 					</div>
 			</div>

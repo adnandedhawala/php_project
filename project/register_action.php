@@ -1,11 +1,11 @@
 <?php 
 	require_once 'db_connect.php';
 
-	if (empty($_POST['log_name'])) $msg = "pls enter valid name";
-	else if (empty($_POST['log_mobile'])) $msg = "pls enter valid contact number";
-	else if (empty($_POST['log_email'])) $msg = "pls enter valid email";
-	else if (empty($_POST['log_password'])) $msg = "pls enter valid password";
-	else if (empty($_POST['log_cpassword'])||($_POST['log_cpassword']!=$_POST['log_password'])) $msg = "pls enter valid confirm password";
+	if (!preg_match("/^[a-zA-Z][a-zA-Z ]{1,}$/",$_POST['log_name'])) $msg = "pls enter valid name";
+	else if (!preg_match("/^[1-9][0-9]{9}$/",$_POST['log_mobile'])) $msg = "pls enter valid contact number";
+	else if (!preg_match("/^([a-zA-Z0-9][a-zA-Z0-9_\.]+[a-zA-Z0-9])@([a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9])\.([a-zA-Z0-9]{2,})(\.[a-zA-Z]{2,})?$/",$_POST['log_email'])) $msg = "pls enter valid email";
+	else if (!preg_match("/^[a-zA-Z1-9][a-zA-Z0-9]{3,11}$/",$_POST['log_password'])) $msg = "pls enter valid password";
+	else if ($_POST['log_cpassword']!=$_POST['log_password']) $msg = "pls enter valid confirm password";
 	else{
 		$name=$_POST['log_name'];
 		$mobile=$_POST['log_mobile'];
@@ -52,7 +52,7 @@
 				curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 				$result = curl_exec($ch); // This is the result from the API
-				print_r($result);
+				// print_r($result);
 				curl_close($ch);
 			//en of sms code
 

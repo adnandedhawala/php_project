@@ -113,5 +113,7 @@
 *create add_product.php
 *create product_action.php
 
+-----------------------project:- DAY8------------------------
 
+*completed product_action.php
 

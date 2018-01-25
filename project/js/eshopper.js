@@ -66,7 +66,8 @@ $(function(){
 		})
 	})
 
-	$(".add-in-cart").click(function(aobj){
+	// $(".add-in-cart").click(function(aobj){
+		$(document).on("click",".add-in-cart",function(aobj){
 		aobj.preventDefault();
 		// alert(1)
 		rec= $(this).attr("for");
@@ -74,8 +75,20 @@ $(function(){
 
 		$.post("cart_action.php","xyz="+rec,function(response){
 			// console.log(response);
-			alert(response);
+			// alert(response);
+			window.location.reload();
 		})
 
+	})
+
+	$(".delete-from-cart").click(function(aobj){
+		aobj.preventDefault();
+
+		rec=$(this).attr("for");
+		// alert(rec);
+		$.post("delete_cart_action.php","msg="+rec,function(response){
+			// alert(response);
+			if(response=="ok") window.location.reload();
+		})
 	})
 });
