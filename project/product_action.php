@@ -12,6 +12,7 @@
 		// echo("<pre>");
 		// print_r($_FILES);
 		// echo("</pre>");
+		// exit;
 
 		if(empty($_FILES['pro_path']['name'])) echo "pls select a Image";
 		else if($_FILES['pro_path']['size']>1024*1024) echo "file size exceeded";

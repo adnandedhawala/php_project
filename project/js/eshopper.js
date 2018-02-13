@@ -91,4 +91,70 @@ $(function(){
 			if(response=="ok") window.location.reload();
 		})
 	})
+
+
+	$("#otp_form,#update_form").hide()
+	$("#forgot_pass_button").click(function(){
+		rec=$("#forgot_pass_form").serialize();
+		// alert(1)
+		$.ajax({
+			type:"post",
+			data:rec,
+			url:"forgot_action1.php",
+			success:function(abc){
+				if(abc=="ok"){
+					$("#otp_form,#forgot_pass_form").slideToggle()
+				}
+				else{
+					$(".msg1").html(abc);
+
+				}
+			},
+			error:function(err){
+				console.log(err);
+			},
+		})
+	})
+
+	$("#otp_button").click(function(){
+		rec=$("#otp_form").serialize();
+		// alert(1)
+		$.ajax({
+			type:"post",
+			data:rec,
+			url:"forgot_action2.php",
+			success:function(abc){
+				if(abc=="ok"){
+					$("#otp_form,#update_form").slideToggle()
+				}
+				else{
+					$(".msg2").html(abc);
+
+				}
+			},
+			error:function(err){
+				console.log(err);
+			},
+		})
+	})
+
+	$("#update_button").click(function(){
+		rec=$("#update_form").serialize();
+		// alert(1)
+		$.ajax({
+			type:"post",
+			data:rec,
+			url:"forgot_action3.php",
+			success:function(abc){
+				
+					$(".msg3").html(abc);
+
+				
+			},
+			error:function(err){
+				console.log(err);
+			},
+		})
+	})
+		
 });

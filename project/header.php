@@ -114,6 +114,8 @@
 if (!isset($_SESSION['log_name'])):
 ?>
 <li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
+<li><a href="forgot_pass.php"><i class="fa fa-lock"></i> Forgot password</a></li>
+
 <?php
 endif;
 ?>
