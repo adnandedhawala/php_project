@@ -1,106 +1,35 @@
-<<<<<<< HEAD
 <?php 
   require_once 'header.php';
  ?>
         <div class="content">
           <h3>Feature <span>Movies</span></h3>
           <ul class="movies">
+            <?php  
+              $dis_res=mysqli_query($conn,"select * from cine_movie where mov_date <= (select curdate() )") or die(mysqli_error($conn));
+              if($dis_res->num_rows>0):
+                while($disp_ans=mysqli_fetch_assoc($dis_res)):
+            ?>
             <li>
-              <h4>Toy Story 3</h4>
-              <img src="images/1page-img2.jpg" alt="" />
-              <p>Egetnunc nunc mattitor curabiturpiscipis nec ac hac pellus sem intesque sociis. Metusmetuer hendimentesque diam at orbi sempor.</p>
-              <div class="wrapper"><button href="#" class="link2"><span><span>Read More</span></span></button></div>
+              <h4><?php echo($disp_ans['mov_name']) ?></h4>
+              <img src="<?php echo($disp_ans['mov_path']) ?>" alt="" />
+              <p style="height: 120px"><?php echo($disp_ans['mov_desc']) ?></p>
+              <div class="wrapper"><a href="show_movie.php?movid=<?php echo($disp_ans['mov_id']) ?>"><button class="link2"><span><span>Book Tickets</span></span></button></a></div>
+              
             </li>
-            <li>
-              <h4>Toy Story 3</h4>
-              <img src="images/1page-img2.jpg" alt="" />
-              <p>Egetnunc nunc mattitor curabiturpiscipis nec ac hac pellus sem intesque sociis. Metusmetuer hendimentesque diam at orbi sempor.</p>
-              <div class="wrapper"><button href="#" class="link2"><span><span>Read More</span></span></button></div>
-            </li>
-            <li>
-              <h4>Toy Story 3</h4>
-              <img src="images/1page-img2.jpg" alt="" />
-              <p>Egetnunc nunc mattitor curabiturpiscipis nec ac hac pellus sem intesque sociis. Metusmetuer hendimentesque diam at orbi sempor.</p>
-              <div class="wrapper"><button href="#" class="link2"><span><span>Read More</span></span></button></div>
-            </li>
-            <li>
-              <h4>Toy Story 3</h4>
-              <img src="images/1page-img2.jpg" alt="" />
-              <p>Egetnunc nunc mattitor curabiturpiscipis nec ac hac pellus sem intesque sociis. Metusmetuer hendimentesque diam at orbi sempor.</p>
-              <div class="wrapper"><button href="#" class="link2"><span><span>Read More</span></span></button></div>
-            </li>
-            <li>
-              <h4>Toy Story 3</h4>
-              <img src="images/1page-img2.jpg" alt="" />
-              <p>Egetnunc nunc mattitor curabiturpiscipis nec ac hac pellus sem intesque sociis. Metusmetuer hendimentesque diam at orbi sempor.</p>
-              <div class="wrapper"><button href="#" class="link2"><span><span>Read More</span></span></button></div>
-            </li>
-            <li>
-              <h4>Toy Story 3</h4>
-              <img src="images/1page-img2.jpg" alt="" />
-              <p>Egetnunc nunc mattitor curabiturpiscipis nec ac hac pellus sem intesque sociis. Metusmetuer hendimentesque diam at orbi sempor.</p>
-              <div class="wrapper"><button href="#" class="link2"><span><span>Read More</span></span></button></div>
-            </li>
+            <?php  
+              endwhile;
+              endif;
+            ?>
+            
 
             <li class="clear">&nbsp;</li>
           </ul>
+        
+
         </div>
       </div>
       
 
 <?php  
   require_once 'footer.php';
-=======
-<?php 
-  require_once 'header.php';
- ?>
-        <div class="content">
-          <h3>Feature <span>Movies</span></h3>
-          <ul class="movies">
-            <li>
-              <h4>Toy Story 3</h4>
-              <img src="images/1page-img2.jpg" alt="" />
-              <p>Egetnunc nunc mattitor curabiturpiscipis nec ac hac pellus sem intesque sociis. Metusmetuer hendimentesque diam at orbi sempor.</p>
-              <div class="wrapper"><button href="#" class="link2"><span><span>Read More</span></span></button></div>
-            </li>
-            <li>
-              <h4>Toy Story 3</h4>
-              <img src="images/1page-img2.jpg" alt="" />
-              <p>Egetnunc nunc mattitor curabiturpiscipis nec ac hac pellus sem intesque sociis. Metusmetuer hendimentesque diam at orbi sempor.</p>
-              <div class="wrapper"><button href="#" class="link2"><span><span>Read More</span></span></button></div>
-            </li>
-            <li>
-              <h4>Toy Story 3</h4>
-              <img src="images/1page-img2.jpg" alt="" />
-              <p>Egetnunc nunc mattitor curabiturpiscipis nec ac hac pellus sem intesque sociis. Metusmetuer hendimentesque diam at orbi sempor.</p>
-              <div class="wrapper"><button href="#" class="link2"><span><span>Read More</span></span></button></div>
-            </li>
-            <li>
-              <h4>Toy Story 3</h4>
-              <img src="images/1page-img2.jpg" alt="" />
-              <p>Egetnunc nunc mattitor curabiturpiscipis nec ac hac pellus sem intesque sociis. Metusmetuer hendimentesque diam at orbi sempor.</p>
-              <div class="wrapper"><button href="#" class="link2"><span><span>Read More</span></span></button></div>
-            </li>
-            <li>
-              <h4>Toy Story 3</h4>
-              <img src="images/1page-img2.jpg" alt="" />
-              <p>Egetnunc nunc mattitor curabiturpiscipis nec ac hac pellus sem intesque sociis. Metusmetuer hendimentesque diam at orbi sempor.</p>
-              <div class="wrapper"><button href="#" class="link2"><span><span>Read More</span></span></button></div>
-            </li>
-            <li>
-              <h4>Toy Story 3</h4>
-              <img src="images/1page-img2.jpg" alt="" />
-              <p>Egetnunc nunc mattitor curabiturpiscipis nec ac hac pellus sem intesque sociis. Metusmetuer hendimentesque diam at orbi sempor.</p>
-              <div class="wrapper"><button href="#" class="link2"><span><span>Read More</span></span></button></div>
-            </li>
-
-            <li class="clear">&nbsp;</li>
-          </ul>
-        </div>
-      </div>
-      
-
-<?php  
-  require_once 'footer.php';
->>>>>>> 9d7e309dd22f01eedbc853be66ace0e7f65e9cc5
 ?>
